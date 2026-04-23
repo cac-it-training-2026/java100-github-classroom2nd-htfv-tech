@@ -49,7 +49,6 @@
  *  全員渡り終わったよ！
  *
  */
-
 package lesson03.challenge04;
 
 import java.io.IOException;
@@ -64,9 +63,17 @@ public class Explorer {
 		int fullLength = 300;
 		int member = 0;
 
-
 		//ここにwhile文を利用した処理を記述
-
+		while (member != 5) {
+			fullLength = 300;
+			member++;
+			System.out.println("隊長:\n" + member + "人目が渡り始めたよ\n");
+			fullLength -= 50;
+			while (fullLength > 0) {
+				System.out.println("隊長:\nまだ渡ってるよ。\n");
+				fullLength -= 50;
+			}
+		}
 
 		System.out.println("全員渡り終わったよ！");
 

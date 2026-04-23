@@ -43,38 +43,68 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 //ここにSpaceshipクラスを記述する
+class Spaceship {
+	double fuel;
 
+	/**
+	 * @return fuel
+	 */
+	public double getFuel() {
+		return fuel;
+	}
+
+	/**
+	 * @param fuel セットする fuel
+	 */
+	public void setFuel(double fuel) {
+		this.fuel = fuel;
+	}
+
+	public boolean checkFuel(double fuelNum) {
+		return Math.floor(fuel) >= 12;//Math.floor(double)はdoubleの小数点を切り捨てる。
+		/*(int)キャストとのちがいは
+		 * (int)12.75→12
+		 * (int)-3.2→3
+		 * になるが、floorを使うと
+		 * Math.floor(12.75)→12
+		 * Math.floor(-3.2)→-4
+		 * より小さい方に丸める。
+		 * ---------------------------------
+		 * Math.ceil()は切り上げ
+		 * Math.round()は四捨五入
+		 * ---------------------------------
+		*/
+	}
+}
 
 public class Astronaut {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        System.out.println("宇宙飛行士：");
-        System.out.println("そろそ地球に帰りたくなってきたな～。");
-        System.out.println("燃料を調べてみるか。\n");
+		System.out.println("宇宙飛行士：");
+		System.out.println("そろそ地球に帰りたくなってきたな～。");
+		System.out.println("燃料を調べてみるか。\n");
 
-        System.out.print("燃料を入力してください＞");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String fuelStr = br.readLine();
-        double fuelNum = Double.parseDouble(fuelStr);
+		System.out.print("燃料を入力してください＞");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String fuelStr = br.readLine();
+		double fuelNum = Double.parseDouble(fuelStr);
 
+		//ここに適切な処理を記述する
+		Spaceship ss = new Spaceship();
+		ss.setFuel(fuelNum);
 
-        //ここに適切な処理を記述する
+		boolean isCheck = false;
 
+		//ここに適切な処理を記述する
+		isCheck = ss.checkFuel(fuelNum);
 
-        boolean isCheck = false;
-
-
-        //ここに適切な処理を記述する
-
-
-        System.out.println("\n宇宙飛行士：");
-        if(isCheck){
-            System.out.println("よし！足りてる足りてる。");
-        } else {
-            System.out.println("えっ！足りてないよ。どうしよう。。。");
-        }
-    }
+		System.out.println("\n宇宙飛行士：");
+		if (isCheck) {
+			System.out.println("よし！足りてる足りてる。");
+		} else {
+			System.out.println("えっ！足りてないよ。どうしよう。。。");
+		}
+	}
 }

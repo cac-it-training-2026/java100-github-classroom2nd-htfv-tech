@@ -15,14 +15,13 @@
  * 喜んでお引き受けします。
  *
  */
-
 package lesson02.challenge03;
 
 public class Detective {
 
 	public static void main(String[] args) {
 
-		int budget = 200;
+		int budget = 501;
 
 		System.out.println("依頼主：");
 		System.out.println("宝石が見つかりましたら");
