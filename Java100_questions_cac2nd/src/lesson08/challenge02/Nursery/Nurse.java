@@ -1,4 +1,4 @@
-package lesson08.challenge03.Nurserry.logic;
+package lesson08.challenge02;
 
 public class Nurse {
 	private String name;
